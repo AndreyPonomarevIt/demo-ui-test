@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class OnlinerTest {
     WebDriver driver;
@@ -19,6 +20,7 @@ public class OnlinerTest {
     public void initObject() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get(OnlinerPage.LOGIN_URL);
     }
 

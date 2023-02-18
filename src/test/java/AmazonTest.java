@@ -52,8 +52,24 @@ public class AmazonTest {
         WebElement CHECK_LOGO_ENTER_EMAIL=driver.findElement(By.xpath(AmazonPage.CHECK_LOGO_ENTER_EMAIL));
         Assert.assertEquals("Enter your email or mobile phone number", CHECK_LOGO_ENTER_EMAIL.getText());
     }
+    @Test
+    public void testSingIn() {
+        WebElement CLICK_BTN_SING_IN = driver.findElement(By.xpath(AmazonPage.CLICK_BTN_SING_IN));
+        CLICK_BTN_SING_IN.click();
+        WebElement CLICK_FIELD_EMAIL=driver.findElement(By.xpath(AmazonPage.CLICK_FIELD_EMAIL));
+        CLICK_FIELD_EMAIL.click();
+        CLICK_FIELD_EMAIL.sendKeys("Droner7777777@gmail.com");
+        WebElement CLICK_BTN_CONTINUE=driver.findElement(By.xpath(AmazonPage.CLICK_BTN_CONTINUE));
+        CLICK_BTN_CONTINUE.click();
+        WebElement CLICK_FIELD_PASSWORD=driver.findElement(By.xpath(AmazonPage.CLICK_FIELD_PASSWORD));
+        CLICK_FIELD_PASSWORD.click();
+        CLICK_FIELD_PASSWORD.sendKeys("kol63zei");
+        WebElement CLICK_BTN_SINGIN=driver.findElement(By.xpath(AmazonPage.CLICK_BTN_SINGIN));
+        CLICK_BTN_SINGIN.click();
+
+    }
     @After
     public void endTest() {
-        driver.quit();
+       // driver.quit();
     }
 }

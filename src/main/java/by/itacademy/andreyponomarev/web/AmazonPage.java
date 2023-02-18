@@ -14,5 +14,13 @@ public class AmazonPage {
     public static final String CLICK_BTN_CONTINUE="//span/input[@id='continue']";
 
     public static final String CHECK_LOGO_ENTER_EMAIL="//div[contains(text(),'Enter your email or mobile phone number')]";
+
+    public static final String CLICK_BTN_SING_IN="//a[@data-nav-ref='nav_ya_signin']";
+
+    public static final String CLICK_FIELD_EMAIL="//input[@type='email']";
+
+    public static final String CLICK_FIELD_PASSWORD="//input[@type='password']";
+
+    public static final String CLICK_BTN_SINGIN="//input[@id='signInSubmit']";
 }
 

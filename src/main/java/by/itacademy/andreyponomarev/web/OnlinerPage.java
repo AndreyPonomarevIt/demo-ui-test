@@ -16,4 +16,10 @@ public class OnlinerPage {
     public static final String CLICK_BTN_ENTER_LOGIN_PAGE ="//div/button[@type='submit']";
 
     public static final String CHECK_LOGO_LOGIN_PAGE="//div[contains(text(),'Укажите пароль')]";
+
+    public static final String ClICK_FIELD_PASSWORD="//input[@type='password']";
+
+    public static final String CLICK_FIELD_LOGIN="//input[@placeholder='Ник или e-mail']";
+
+    public static final String CLICK_CHAPTA="//div[@class='rc-anchor-center-item rc-anchor-checkbox-holder']";
 }

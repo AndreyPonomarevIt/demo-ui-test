@@ -1,4 +1,5 @@
 import by.itacademy.andreyponomarev.web.OnlinerPage;
+import by.itacademy.andreyponomarev.web.Util;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -63,6 +64,35 @@ public class OnlinerTest {
         CLICK_BTN_ВОЙТИ_FORM_LOGIN.click();
         WebElement CHECK_LOGO_LOGIN_PAGE = driver.findElement(By.xpath(OnlinerPage.CHECK_LOGO_LOGIN_PAGE));
         Assert.assertEquals("Укажите пароль", CHECK_LOGO_LOGIN_PAGE.getText());
+    }
+    @Test
+    public void testOnlinerWhenInputOnlyPassword () {
+        WebElement CLICK_BTN_ВХОД = driver.findElement(By.xpath(OnlinerPage.CLICK_BTN_ENTER));
+        CLICK_BTN_ВХОД.click();
+        WebElement ClICK_FIELD_PASSWORD=driver.findElement(By.xpath(OnlinerPage.ClICK_FIELD_PASSWORD));
+        ClICK_FIELD_PASSWORD.click();
+        WebElement INPUT_PASSWORD=driver.findElement(By.xpath(OnlinerPage.INPUT_PASSWORD));
+        INPUT_PASSWORD.sendKeys("test");
+        WebElement CLICK_BTN_ВОЙТИ_FORM_LOGIN = driver.findElement(By.xpath(OnlinerPage.CLICK_BTN_ENTER_FORM_LOGIN));
+        CLICK_BTN_ВОЙТИ_FORM_LOGIN.click();
+    }
+    @Test
+    public void testLoginAndCheck()  {
+        WebElement CLICK_BTN_ВХОД = driver.findElement(By.xpath(OnlinerPage.CLICK_BTN_ENTER));
+        CLICK_BTN_ВХОД.click();
+        WebElement CLICK_FIELD_LOGIN=driver.findElement(By.xpath(OnlinerPage.CLICK_FIELD_LOGIN));
+        CLICK_FIELD_LOGIN.click();
+        WebElement INPUT_LOGIN=driver.findElement(By.xpath(OnlinerPage.INPUT_LOGIN));
+        INPUT_LOGIN.sendKeys("Droner7777777@gmail.com");
+        WebElement ClICK_FIELD_PASSWORD=driver.findElement(By.xpath(OnlinerPage.ClICK_FIELD_PASSWORD));
+        ClICK_FIELD_PASSWORD.click();
+        WebElement INPUT_PASSWORD=driver.findElement(By.xpath(OnlinerPage.INPUT_PASSWORD));
+        INPUT_PASSWORD.sendKeys("kol63zei");
+        WebElement CLICK_BTN_ВОЙТИ_FORM_LOGIN = driver.findElement(By.xpath(OnlinerPage.CLICK_BTN_ENTER_FORM_LOGIN));
+        CLICK_BTN_ВОЙТИ_FORM_LOGIN.click();
+        Util.waitFor(1);
+        WebElement CLICK_CHAPTA=driver.findElement(By.xpath(OnlinerPage.CLICK_CHAPTA));
+        CLICK_CHAPTA.click();
     }
 
     @After

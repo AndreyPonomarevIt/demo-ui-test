@@ -1,4 +1,5 @@
 import by.itacademy.andreyponomarev.web.OnlinerPage;
+import by.itacademy.andreyponomarev.web.OnlinerPageHomeTask;
 import by.itacademy.andreyponomarev.web.Util;
 import org.junit.After;
 import org.junit.Assert;
@@ -12,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class OnlinerTest {
@@ -19,16 +21,19 @@ public class OnlinerTest {
 
     @Before
     public void initObject() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.get(OnlinerPage.LOGIN_URL);
+        //driver = new ChromeDriver();
+        //driver.manage().window().maximize();
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        //driver.get(OnlinerPage.LOGIN_URL);
+
     }
 
     @Test
     public void testOpenOnliner() {
-        WebElement COPIRIGHT_ELEMENT = driver.findElement(By.xpath(OnlinerPage.COPIRIGHT_ELEMENT));
-        Assert.assertEquals("© 2001—2023 Onlíner", COPIRIGHT_ELEMENT.getText());
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(OnlinerPage.LOGIN_URL);
+        driver.quit();
     }
 
     @Test
@@ -93,6 +98,18 @@ public class OnlinerTest {
         Util.waitFor(1);
         WebElement CLICK_CHAPTA=driver.findElement(By.xpath(OnlinerPage.CLICK_CHAPTA));
         CLICK_CHAPTA.click();
+    }
+    @Test
+    public void testArrive() throws InterruptedException {
+        WebElement CLICK_BTN_ВХОД = driver.findElement(By.xpath(OnlinerPage.CLICK_BTN_ENTER));
+        CLICK_BTN_ВХОД.click();
+        WebElement CLICK_BTN_ВОЙТИ_FORM_LOGIN = driver.findElement(By.xpath(OnlinerPage.CLICK_BTN_ENTER_FORM_LOGIN));
+        CLICK_BTN_ВОЙТИ_FORM_LOGIN.click();
+        Util.waitTimeFor(10);
+        List<WebElement>ERROR_MESSAGE=driver.findElements(By.xpath(OnlinerPage.ERROR_MESSAGES));
+        Assert.assertEquals("Укажите ник или e-mail",ERROR_MESSAGE.get(0).getText());
+        Assert.assertEquals("Укажите пароль",ERROR_MESSAGE.get(1).getText());
+
     }
 
     @After

@@ -1,7 +1,7 @@
 package by.itacademy.andreyponomarev.web;
 
 public class OnlinerPage {
-    public static final String LOGIN_URL="https://www.onliner.by";
+    public static final String LOGIN_URL="https://catalog.onliner.by";
     public static final String COPIRIGHT_ELEMENT="//div[@class='footer-style__copy']";
     public static final String CLICK_BTN_ENTER ="//div[text()='Вход']";
     public static final String CHECK_TEXT_BTN_ENTER ="//div[@class='auth-form__title auth-form__title_big auth-form__title_condensed-default']";
@@ -22,4 +22,6 @@ public class OnlinerPage {
     public static final String CLICK_FIELD_LOGIN="//input[@placeholder='Ник или e-mail']";
 
     public static final String CLICK_CHAPTA="//div[@class='rc-anchor-center-item rc-anchor-checkbox-holder']";
+
+    public static final String ERROR_MESSAGES="//div[@class='auth-form__description auth-form__description_error auth-form__description_base auth-form__description_extended-other']";
 }
